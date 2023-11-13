@@ -1,0 +1,15 @@
+.main{
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.drawer-container{
+    background-color: var(--color-mainbg); 
+    height: 100vh; 
+}
+
+.drawer-navigation{
+    width: 250px;
+}

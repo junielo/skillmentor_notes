@@ -1,0 +1,64 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#fff" type = "ball-grid-pulse" [fullScreen] = "true">
+    <p style="color: white" > Updating Embedding... </p>
+</ngx-spinner>
+<div class="main-content fa-v" *ngIf="courseUnit$ | async as unit" style="overflow: auto;">
+
+    <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+        <span>Embedding ID:</span>
+        <span style="font-weight: 500; font-size: medium;">{{unit.embeded_id}}</span>
+    </div>
+
+    <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+        <span>Course ID:</span>
+        <span style="font-weight: 500; font-size: medium;">{{unit.course_main_id}}</span>
+    </div>
+
+    <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+        <span>Topic ID:</span>
+        <span style="font-weight: 500; font-size: medium;">{{unit.topic_id}}</span>
+    </div>
+
+    <form [formGroup]="unitForm" (ngSubmit)="embedTranscript()" class="d-flex fa-v" style="flex: 1;">
+
+        <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+            <span>Topic Title:</span>
+            <mat-form-field style="width: 100%;">
+                <input formControlName="topic_title" matInput placeholder="Enter topic" autocomplete="off">
+            </mat-form-field>
+        </div>
+    
+        <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+            <span>Chapter Title:</span>
+            <mat-form-field style="width: 100%;">
+                <input formControlName="chapter_title" matInput placeholder="Enter chapter" autocomplete="off">
+            </mat-form-field>
+        </div>
+    
+        <div class="outlined-primary-panel fa-v" style="align-items: flex-start;">
+            <span>Duration:</span>
+            <mat-form-field>
+                <input formControlName="duration" matInput placeholder="Ex. 8 hrs" autocomplete="off">
+            </mat-form-field>
+        </div>
+    
+        <div class="outlined-primary-panel fa-v" style="align-items: flex-start; flex: 1;">
+            <span>Transcript:</span>
+            <mat-form-field style="width: 100%; height: 100%;">
+                <textarea cdkTextareaAutosize cdkAutosizeMinRows="5" cdkAutosizeMaxRows="20"
+                 formControlName="transcript" matInput autocomplete="off" placeholder="Enter transcript"></textarea>
+            </mat-form-field>
+        </div>
+    
+        <button type="submit" class="green-button center-content" style="margin-bottom: 15px;">
+            <mat-icon style="margin-right: 0.5rem;" matPrefix>settings_ethernet</mat-icon>
+            Embed Transcript
+        </button>
+
+    </form>
+    
+    <button (click)="deleteEmbedding()" class="red-button center-content" style="margin-bottom: 15px;">
+        <mat-icon style="margin-right: 0.5rem;" matPrefix>delete</mat-icon>
+        Delete Topic
+    </button>
+
+</div>

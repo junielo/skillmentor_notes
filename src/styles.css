@@ -1,1 +1,222 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+:root {
+    --background: #FBFFFF;
+    --primary: #206E7F;
+    --secondary: #5D9EAC;
+    --scroll-bar-color: #c5c5c5;
+    --scroll-bar-bg-color: #f6f6f6;
+}
+
+::-webkit-scrollbar-corner { background: rgba(0,0,0,0.5); }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
+}
+
+html, body { height: 100%; width: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #3C3C3C; display: flex; }
+
+.d-flex{
+    display: flex;
+}
+
+.fa-h{
+    flex-direction: row;
+}
+
+.fa-v{
+    flex-direction: column;
+}
+
+.header-text{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.title-text{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-shadow: 0px 2px 5px black;
+}
+
+.main-content{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.center-content{
+    align-items: center; 
+    justify-content: center;
+}
+
+.width-spacer {
+    flex: 1 1 auto;
+}
+
+.primary-button{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    padding-left: 6px;
+    background-color: var(--primary); 
+    color: white; 
+    font-weight: 500; 
+    font-size: medium;
+    border-radius: 5px; 
+    box-shadow: 0 8px 8px -4px lightblue;
+    cursor: pointer;
+}
+
+.red-button{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    padding-left: 6px;
+    background-color: #FF5252;
+    color: white; 
+    font-weight: 500; 
+    font-size: medium;
+    border-radius: 5px; 
+    box-shadow: 0 8px 8px -4px #ff52527b;
+    cursor: pointer;
+}
+
+.blue-button{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    padding-left: 6px;
+    background-color: #448AFF;
+    color: white; 
+    font-weight: 500; 
+    font-size: medium;
+    border-radius: 5px; 
+    box-shadow: 0 8px 8px -4px #4489ff7e;
+    cursor: pointer;
+}
+
+.green-button{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    padding-left: 6px;
+    background-color: #4CAF50;
+    color: white; 
+    font-weight: 500; 
+    font-size: medium;
+    border-radius: 5px; 
+    box-shadow: 0 8px 8px -4px #4caf4f7b;
+    cursor: pointer;
+}
+
+.outlined-green-button{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    padding-left: 6px;
+    border: #4CAF50 solid 2px;
+    color: #4CAF50; 
+    font-weight: 500; 
+    font-size: medium;
+    border-radius: 5px; 
+    box-shadow: 0 8px 8px -4px #4caf4f7b;
+    cursor: pointer;
+}
+
+.outlined-primary-panel{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-top: 10px;
+    border: var(--primary) solid 0.5px;
+    color: black; 
+    font-size: small;
+    border-radius: 5px; 
+}
+
+.primary-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-fit-unselected{
+    border-radius: 3px;
+    background-color: white; 
+    margin-top: 20px; 
+    box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.137);
+    padding: 10px;
+    border-top: var(--secondary) 2px solid;
+    cursor: pointer;
+}
+
+.card-fit-selected{
+    border-radius: 3px;
+    background-color: var(--primary);
+    color: white; 
+    margin-top: 20px; 
+    box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.137);
+    padding: 10px;
+}
+
+.list-card{
+    width: 100%; 
+    height: 180px; 
+    border-radius: 10px; 
+    background-color: white; 
+    margin-top: 20px; 
+    box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.137);
+}
+
+.list-card-image{
+    width: 180px !important; 
+    height: 180px !important; 
+    object-fit: cover; 
+    border-radius: 10px 0px 0px 10px;
+}
+
+.list-card-title{
+    font-size: x-large; 
+    color: var(--primary); 
+    flex-grow: 1; 
+}
+
+mat-card-content{
+    background-color: var(--secondary);
+    width: 30vw;
+    min-width: 500px;
+}

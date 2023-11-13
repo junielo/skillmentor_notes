@@ -1,0 +1,18 @@
+<div class="main-content fa-v" style="gap: 15px;">
+    
+    <div>
+        <div (click)="createTopic()" class="outlined-green-button width-spacer center-content">
+            <span style="margin-left: 0.5rem;" class="width-spacer">Create Topic</span>
+            <mat-icon style="margin-right: 0.5rem;" matPrefix>add</mat-icon>
+        </div>
+    </div>
+
+    <div style="flex: 1; overflow: auto; padding-right: 5px;">
+        <div *ngFor="let unit of unitsByCourse$ | async">
+            <div (click)="selectUnit(unit.topic_id)" [ngClass]="unit.topic_id === selectedUnit ? 'card-fit-selected' : 'card-fit-unselected'">
+                <div style="font-size: x-small; font-weight: 500; text-transform:uppercase">{{unit.topic_id}}</div>
+                {{unit.topic_title}}
+            </div>
+        </div>
+    </div>
+</div>

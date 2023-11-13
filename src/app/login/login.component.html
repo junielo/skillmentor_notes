@@ -1,0 +1,30 @@
+<div class="main-content center-content" style="width: 100vw;">
+    <mat-card>
+        <mat-card-content>
+            <div style="padding: 25px;">
+                <div class="header-text" style="text-align: center; font-size: xx-large;">Login</div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+                    <div style="display: flex; flex-direction: column;">
+                        <mat-form-field class="width-spacer">
+                            <mat-icon matPrefix>account_circle</mat-icon>
+                            <mat-label>Email Address</mat-label>
+                            <input class="width-spacer" matInput formControlName="email">
+                        </mat-form-field>
+    
+                        <mat-form-field>
+                            <mat-icon matPrefix>vpn_key</mat-icon>
+                            <mat-label>Password</mat-label>
+                            <input matInput formControlName="password" type="password">
+                        </mat-form-field>
+
+                        <button style="align-self: center; font-size:larger;" mat-raised-button type="submit"><span style="padding: 15px;">Login</span></button>
+                    </div>
+
+                </form>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

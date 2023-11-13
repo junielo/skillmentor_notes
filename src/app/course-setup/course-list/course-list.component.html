@@ -1,0 +1,30 @@
+<div class="main-content fa-v" style="gap: 15px;">
+
+    <div>
+        <div class="width-spacer d-flex fa-h" 
+        style="align-items: flex-start; column-gap: 10px;">
+            <div (click)="createCourse()" class="green-button center-content" style="flex: 1;">
+                <mat-icon>playlist_add</mat-icon>
+            </div>
+            <div class="blue-button center-content" style="flex: 1;">
+                <mat-icon>create</mat-icon>
+            </div>
+            <div class="red-button center-content" style="flex: 1;">
+                <mat-icon>delete</mat-icon>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="flex: 1; overflow: auto; padding-right: 5px;">
+        <div *ngFor="let course of allCourses$ | async">
+            <div (click)="selectCourse(course.course_id)" [ngClass]="course.course_id === selectedCourse ? 'card-fit-selected' : 'card-fit-unselected'">
+                <div style="font-size: x-small; font-weight: 500; text-transform:uppercase">
+                    {{course.course_id}}
+                </div>
+                {{course.course_title}}
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "tsconfig.spec.json": true,
+        "tsconfig.json": true,
+        "tsconfig.app.json": true,
+        "README.md": true,
+        "package-lock.json": true,
+        ".hintrc": true,
+        ".gitignore": true,
+        ".editorconfig": true,
+        "src/main.ts": true
+    },
+    "explorerExclude.backup": {}
+}

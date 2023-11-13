@@ -1,0 +1,48 @@
+<div class="main">
+    <mat-toolbar class="mat-elevation-z8" style="z-index: 2; background-color: var(--primary); color: white;">
+        <button (click)="drawer.toggle()" mat-icon-button aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>SkillMentor</span>
+        <span class="width-spacer"></span>
+        <button mat-icon-button (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-drawer-container class="drawer-container" [hasBackdrop]="true">
+    
+        <mat-drawer #drawer mode="over" class="drawer-navigation">
+            <div style="display: flex; flex-direction: column; padding: 5px;">
+                <div (click)="drawer.toggle()" [routerLink]="['./dashboard']" class="primary-button">
+                    <mat-icon>dashboard</mat-icon>
+                    <span class="primary-text">Dashboard</span>
+                </div>
+                <div (click)="drawer.toggle()" [routerLink]="['./training-plan']" class="primary-button">
+                    <mat-icon>add_location</mat-icon>
+                    <span class="primary-text">Training Plan</span>
+                </div>
+                <div (click)="drawer.toggle()" [routerLink]="['./search-training']" class="primary-button">
+                    <mat-icon>search</mat-icon>
+                    <span class="primary-text">Search Trainings</span>
+                </div>
+                <div (click)="drawer.toggle()" [routerLink]="['./enrolled-training']" class="primary-button">
+                    <mat-icon>directions_walk</mat-icon>
+                    <span class="primary-text">Enrolled Trainings</span>
+                </div>
+                <div (click)="drawer.toggle()" [routerLink]="['./completed-training']" class="primary-button">
+                    <mat-icon>school</mat-icon>
+                    <span class="primary-text">Completed Trainings</span>
+                </div>
+                <div (click)="drawer.toggle()" [routerLink]="['./setup-course']" class="primary-button">
+                    <mat-icon>school</mat-icon>
+                    <span class="primary-text">Setup Courses</span>
+                </div>
+            </div>
+        </mat-drawer>
+    
+        <mat-drawer-content style="background-color: var(--background);">
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    
+    </mat-drawer-container>
+</div>

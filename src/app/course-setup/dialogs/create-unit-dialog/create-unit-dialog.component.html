@@ -1,0 +1,33 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.4)" size = "large" color = "#fff" type = "ball-spin-clockwise" [fullScreen] = "true"></ngx-spinner>
+<mat-card>
+    <mat-card-content>
+        <div style="padding: 25px;">
+            <form [formGroup]="unitForm" (ngSubmit)="onSubmit()">
+
+                <div style="display: flex; flex-direction: column;">
+                    <mat-form-field class="width-spacer">
+                        <mat-label>Topic ID</mat-label>
+                        <input matInput autocomplete="off" formControlName="topic_id">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Topic Title</mat-label>
+                        <input matInput autocomplete="off" formControlName="chapter_title">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Chapter Title</mat-label>
+                        <input matInput autocomplete="off" formControlName="topic_title">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Duration</mat-label>
+                        <input matInput autocomplete="off" formControlName="duration">
+                    </mat-form-field>
+
+                    <button style="align-self: center;" mat-raised-button type="submit"><span style="padding: 15px;">Create Topic</span></button>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>
