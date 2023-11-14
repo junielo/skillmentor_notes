@@ -15,7 +15,7 @@ export interface Unit {
   chapter_title: string,
   topic_title: string,
   duration: string,
-  transcript: string,
+  transcript: { id: string, chunk: string }[],
 }
 
 @Component({
@@ -43,7 +43,15 @@ export class UnitListComponent implements OnInit {
   setUnitObservable(){
     return this.store.select(getCourse).pipe(
       switchMap(course_id => {
+        console.log(course_id)
         this.selectedCourse = course_id
+        if(!this.selectedCourse){
+          return this.store.select(getCourse).pipe(
+            switchMap(_ => {
+              return new Observable<Unit[]>()
+            }
+          ))
+        }
         return this.service.getUnitByCourse(this.selectedCourse).pipe(
           tap((response: Unit[]) => {
             if(response.length > 0)
@@ -52,6 +60,7 @@ export class UnitListComponent implements OnInit {
               this.selectUnit("")
           })
         )
+        
       })
     )
   }

@@ -48,24 +48,33 @@ export class UnitContentComponent implements OnInit {
         this.topic_id = unit.unit_id
       }),
       switchMap(unit => {
+        console.log(this.course_id, this.topic_id)
+        if(!this.course_id || !this.topic_id){
+          return this.store.select(geCourseUnit).pipe(
+            switchMap(_ => {
+              return new Observable<Unit>()
+            }
+          ))
+        }
         return this.service.getSingleUnit(unit).pipe(
           map((response: any) => {
-            if(response.body && response.body.length > 0){
-              this.embedding_id = response.body[0].embeded_id
+            let transcript = response.body.transcript.length > 0 ? response.body.transcript.map((item: any) => item.chunk).join('\n\n') : ''
+            if(response.body){
+              this.embedding_id = response.body.embeded_id
               this.unitForm.patchValue({
-                chapter_title: response.body[0].chapter_title,
-                topic_title: response.body[0].topic_title,
-                duration: response.body[0].duration,
-                transcript: response.body[0].transcript
+                chapter_title: response.body.chapter_title,
+                topic_title: response.body.topic_title,
+                duration: response.body.duration,
+                transcript: transcript
               })
               return {
-                embeded_id: response.body[0].embeded_id.length > 0 ? response.body[0].embeded_id : "Not embedded yet",
-                course_main_id: response.body[0].course_main_id,
-                topic_id: response.body[0].topic_id,
-                chapter_title: response.body[0].chapter_title,
-                topic_title: response.body[0].topic_title,
-                duration: response.body[0].duration,
-                transcript: response.body[0].transcript
+                embeded_id: response.body.transcript.length > 0 ? 'Transcript embedded' : "Not embedded yet",
+                course_main_id: response.body.course_main_id,
+                topic_id: response.body.topic_id,
+                chapter_title: response.body.chapter_title,
+                topic_title: response.body.topic_title,
+                duration: response.body.duration,
+                transcript: response.body.transcript
               }
             }
             else{
@@ -96,8 +105,7 @@ export class UnitContentComponent implements OnInit {
     const data = {
       ...raw_data,
       course_id: this.course_id,
-      unit_id: this.topic_id,
-      embedding_id: this.embedding_id
+      unit_id: this.topic_id
     }
     if(data.transcript.length == 0){
       this.toast.error('Transcript is empty', 'Error')
