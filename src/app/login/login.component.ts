@@ -35,8 +35,9 @@ export class LoginComponent {
           this.toast.error(resp.msg)
           return
         }
-        localStorage.setItem(TAG_CURRENT_USER, JSON.stringify(response.body.response));
-        this.toast.success('Good day ' + response.body.response.fullname + '!')
+        console.log(response.body.user)
+        localStorage.setItem(TAG_CURRENT_USER, JSON.stringify(response.body.user));
+        this.toast.success('Good day ' + response.body.user.fullname + '!')
         this.router.navigate(['/nav'])
       }
     )

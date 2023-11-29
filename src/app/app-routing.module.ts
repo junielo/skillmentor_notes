@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'nav', component: NavBarComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'training-plan', component: TrainingPlanComponent },
-      { path: 'search-training', component: SearchTrainingComponent },
-      { path: 'enrolled-training', component: EnrolledTrainingComponent },
-      { path: 'completed-training', component: CompletedTrainingComponent },
+      { path: '', redirectTo: 'setup-course', pathMatch: 'full' },
+      // { path: 'dashboard', component: DashboardComponent },
+      // { path: 'training-plan', component: TrainingPlanComponent },
+      // { path: 'search-training', component: SearchTrainingComponent },
+      // { path: 'enrolled-training', component: EnrolledTrainingComponent },
+      // { path: 'completed-training', component: CompletedTrainingComponent },
       { path: 'setup-course', component: CourseMainComponent }
     ]
   }

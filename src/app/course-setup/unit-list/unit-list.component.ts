@@ -6,7 +6,7 @@ import { CourseUnitStateModel } from '../state/course.state';
 import { getCourse } from '../state/course.selector';
 import { CourseUnitsService } from '../course-units.service';
 import { Observable, catchError, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs';
-import { setSelectedUnit } from '../state/course.action';
+import { setSelectedCourse, setSelectedUnit } from '../state/course.action';
 
 export interface Unit {
   embeded_id: string,
@@ -37,30 +37,27 @@ export class UnitListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.unitsByCourse$ = this.setUnitObservable()
+    this.store.select(getCourse).subscribe(course_id => {
+      console.log('topic triggered')
+      this.selectedCourse = course_id
+      if(!this.selectedCourse){
+        this.unitsByCourse$ =  new Observable<Unit[]>()
+        return
+      }
+      this.unitsByCourse$ = this.setUnitObservable()
+    })
   }
 
   setUnitObservable(){
-    return this.store.select(getCourse).pipe(
-      switchMap(course_id => {
-        console.log(course_id)
-        this.selectedCourse = course_id
-        if(!this.selectedCourse){
-          return this.store.select(getCourse).pipe(
-            switchMap(_ => {
-              return new Observable<Unit[]>()
-            }
-          ))
-        }
-        return this.service.getUnitByCourse(this.selectedCourse).pipe(
-          tap((response: Unit[]) => {
-            if(response.length > 0)
-              this.selectUnit(response[0].topic_id)
-            else
-              this.selectUnit("")
-          })
-        )
-        
+    return this.service.getUnitByCourse(this.selectedCourse).pipe(
+      tap((response: Unit[]) => {
+        if(response.length > 0)
+          this.selectUnit(response[0].topic_id)
+        else
+          this.selectUnit("")
+      }),
+      catchError((_) => {
+        return new Observable<Unit[]>()
       })
     )
   }
@@ -72,7 +69,7 @@ export class UnitListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(response => {
       if(response)
-        this.unitsByCourse$ = this.setUnitObservable()
+        this.store.dispatch(setSelectedCourse({course_id: this.selectedCourse}))
     });
   }
 

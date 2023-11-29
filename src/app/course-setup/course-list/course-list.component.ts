@@ -52,6 +52,7 @@ export class CourseListComponent {
   selectCourse(course_id: string){
     this.selectedCourse = course_id;
     this.store.dispatch(setSelectedCourse({course_id}))
+    console.log('course selected')
   }
 
 }

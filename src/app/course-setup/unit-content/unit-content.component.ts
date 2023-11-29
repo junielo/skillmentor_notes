@@ -8,6 +8,7 @@ import { Unit } from '../unit-list/unit-list.component';
 import { geCourseUnit } from '../state/course.selector';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { setSelectedUnit } from '../state/course.action';
 
 @Component({
   selector: 'app-unit-content',
@@ -38,64 +39,63 @@ export class UnitContentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.courseUnit$ = this.setUnitObservable()
+    // this.courseUnit$ = this.setUnitObservable()
+    this.store.select(geCourseUnit).subscribe(unit => {
+      this.course_id = unit.course_id
+      this.topic_id = unit.unit_id
+      if(!this.course_id || !this.topic_id){
+        this.courseUnit$ = new Observable<Unit>()
+        return
+      }
+      this.courseUnit$ = this.setUnitObservable(unit)
+    })
   }
 
-  setUnitObservable(){
-    return this.store.select(geCourseUnit).pipe(
-      tap(unit => {
-        this.course_id = unit.course_id
-        this.topic_id = unit.unit_id
-      }),
-      switchMap(unit => {
-        console.log(this.course_id, this.topic_id)
-        if(!this.course_id || !this.topic_id){
-          return this.store.select(geCourseUnit).pipe(
-            switchMap(_ => {
-              return new Observable<Unit>()
-            }
-          ))
-        }
-        return this.service.getSingleUnit(unit).pipe(
-          map((response: any) => {
-            let transcript = response.body.transcript.length > 0 ? response.body.transcript.map((item: any) => item.chunk).join('\n\n') : ''
-            if(response.body){
-              this.embedding_id = response.body.embeded_id
-              this.unitForm.patchValue({
-                chapter_title: response.body.chapter_title,
-                topic_title: response.body.topic_title,
-                duration: response.body.duration,
-                transcript: transcript
-              })
-              return {
-                embeded_id: response.body.transcript.length > 0 ? 'Transcript embedded' : "Not embedded yet",
-                course_main_id: response.body.course_main_id,
-                topic_id: response.body.topic_id,
-                chapter_title: response.body.chapter_title,
-                topic_title: response.body.topic_title,
-                duration: response.body.duration,
-                transcript: response.body.transcript
-              }
-            }
-            else{
-              this.unitForm.patchValue({
-                chapter_title: "",
-                topic_title: "",
-                duration: "",
-                transcript: ""
-              })
-              return {
-                embeded_id: "",
-                course_main_id: "",
-                topic_id: "",
-                chapter_title: "",
-                topic_title: "",
-                duration: "",
-                transcript: ""
-              }
-            }
+  setUnitObservable(unit: any){
+    return this.service.getSingleUnit(unit).pipe(
+      map((response: any) => {
+        if(response.body){
+          let transcript = ''
+          let transcript_status = "Not embedded yet"
+          if(response.body.transcript){
+            transcript = response.body.transcript.length > 0 ? response.body.transcript.map((item: any) => item.chunk).join('\n\n') : ''
+            if(response.body.transcript.length > 0)
+              transcript_status = "Transcript embedded"
+          }
+          this.embedding_id = response.body.embeded_id
+          this.unitForm.patchValue({
+            chapter_title: response.body.chapter_title,
+            topic_title: response.body.topic_title,
+            duration: response.body.duration,
+            transcript: transcript
           })
-        )
+          return {
+            embeded_id: transcript_status,
+            course_main_id: response.body.course_main_id,
+            topic_id: response.body.topic_id,
+            chapter_title: response.body.chapter_title,
+            topic_title: response.body.topic_title,
+            duration: response.body.duration,
+            transcript: response.body.transcript
+          }
+        }
+        else{
+          this.unitForm.patchValue({
+            chapter_title: "",
+            topic_title: "",
+            duration: "",
+            transcript: ""
+          })
+          return {
+            embeded_id: "",
+            course_main_id: "",
+            topic_id: "",
+            chapter_title: "",
+            topic_title: "",
+            duration: "",
+            transcript: ""
+          }
+        }
       })
     )
   }
@@ -116,7 +116,12 @@ export class UnitContentComponent implements OnInit {
     this.service.upsertEmbedding(data).subscribe(response => {
       this.spinner.hide();
       this.toast.success('Transcript embedded successfully', 'Success')
-      this.courseUnit$ = this.setUnitObservable()
+      // this.courseUnit$ = this.setUnitObservable()
+      const courseUnit: CourseUnitStateModel = {
+        course_id: this.course_id,
+        unit_id: this.topic_id
+      }
+      this.store.dispatch(setSelectedUnit(courseUnit))
     }, error => {
       this.spinner.hide();
       this.toast.error('Transcript embedding failed', 'Error')
@@ -129,7 +134,12 @@ export class UnitContentComponent implements OnInit {
       response => {
         this.spinner.hide();
         this.toast.success('Topic deleted successfully', 'Success')
-        this.courseUnit$ = this.setUnitObservable()
+        // this.courseUnit$ = this.setUnitObservable()
+        const courseUnit: CourseUnitStateModel = {
+          course_id: this.course_id,
+          unit_id: this.topic_id
+        }
+        this.store.dispatch(setSelectedUnit(courseUnit))
       }
     )
   }

@@ -26,7 +26,9 @@ export class ApiService {
 
 }
 
-export const LOCAL_API_URL = "http://localhost:3333/"
+// export const LOCAL_API_URL = "http://localhost:3333/"
+export const LOCAL_API_URL = "http://localhost:5000/"
+// export const LOCAL_API_URL = "https://be.skillmentor.oraclecloudapps.one/"
 
 export const LOGIN = LOCAL_API_URL + "user/login"
 export const TRAININGPLAN = LOCAL_API_URL + "user/trainingPlan/"
