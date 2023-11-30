@@ -27,20 +27,33 @@ export class LoginComponent {
     { }
 
   onSubmit(){
-    this.authService.userLogin(this.loginForm.getRawValue())
-    .subscribe(
-      (response: HttpResponse<any>) => {
-        let resp: any = response
-        if(response.status != 200) {
-          this.toast.error(resp.msg)
-          return
-        }
-        console.log(response.body.user)
-        localStorage.setItem(TAG_CURRENT_USER, JSON.stringify(response.body.user));
-        this.toast.success('Good day ' + response.body.user.fullname + '!')
-        this.router.navigate(['/nav'])
+    // this.authService.userLogin(this.loginForm.getRawValue())
+    // .subscribe(
+    //   (response: HttpResponse<any>) => {
+    //     let resp: any = response
+    //     if(response.status != 200) {
+    //       this.toast.error(resp.msg)
+    //       return
+    //     }
+    //     console.log(response.body.user)
+    //     localStorage.setItem(TAG_CURRENT_USER, JSON.stringify(response.body.user));
+    //     this.toast.success('Good day ' + response.body.user.fullname + '!')
+    //     this.router.navigate(['/nav'])
+    //   }
+    // )
+    
+    const mform = this.loginForm.getRawValue()
+    this.authService.supaLogin(mform.email, mform.password)
+    .then((response: any) => {
+      console.log(response)
+      if(response.error){
+        this.toast.error(response.error.message)
+        return
       }
-    )
+      localStorage.setItem(TAG_CURRENT_USER, JSON.stringify(response.data));
+      this.toast.success('Good day ' + response.data.fullname + '!')
+      this.router.navigate(['/nav'])
+    })
   }
 
 }

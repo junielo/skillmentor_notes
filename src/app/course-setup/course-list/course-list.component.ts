@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateCourseDialogComponent } from '../dialogs/create-course-dialog/create-course-dialog.component';
 import { CourseUnitsService } from '../course-units.service';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { CourseUnitStateModel } from '../state/course.state';
 import { setSelectedCourse } from '../state/course.action';
@@ -41,11 +41,19 @@ export class CourseListComponent {
   }
 
   setCourseObservable(){
-    return this.service.getAllCourses().pipe( 
-      tap((response: Course[]) => 
-      { 
-        this.selectCourse(response[0].course_id)
-      }) 
+    // return this.service.getAllCourses().pipe( 
+    //   tap((response: Course[]) => 
+    //   { 
+    //     this.selectCourse(response[0].course_id)
+    //   }) 
+    // )
+
+    return this.service.supaGetAllCourses().pipe(
+      tap((response: any) => {
+        console.log(response)
+        this.selectCourse(response.data[0].course_id)
+      }),
+      map((response: any) => response.data)
     )
   }
 

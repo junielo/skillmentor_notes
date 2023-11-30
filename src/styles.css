@@ -220,3 +220,7 @@ mat-card-content{
     width: 30vw;
     min-width: 500px;
 }
+
+mat-expansion-panel {
+    width: 100%;
+}

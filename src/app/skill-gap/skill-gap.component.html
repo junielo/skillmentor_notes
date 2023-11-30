@@ -1,0 +1,135 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="ball-grid-pulse" [fullScreen]="true">
+    <p style="color: white; margin-top: 10px;"> Analyzing Skill Gap... </p>
+</ngx-spinner>
+<div class="main-content fa-h" style="margin: auto; gap: 15px; max-width: 1280px;">
+
+    <div class="d-flex fa-v" style="width: 25rem; gap: 50px; overflow: auto; padding-right: 10px;">
+
+        <div class="d-flex center-content" style="width: 15rem; height: 15rem; align-self: center; margin-top: 20px;">
+            <img style="width: 100%; height: 100%; object-fit: contain;"
+                src="https://dynamicmedia.accenture.com/is/image/accenture/Accenture-ProBono-Consulting-XS-marquee?qlt=85&wid=600&ts=1692306909179&fit=wrap&dpr=off"
+                alt="Accenture">
+        </div>
+
+        <div class="width-spacer d-flex fa-v" style="gap: 10px;">
+            <span style="color: black; font-weight: lighter; font-size: xx-large;">Accenture PH</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Title: Senior App Integration
+                Specialist</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">We need a top notch application
+                integration specialist that has 10 years of experience.</span>
+
+            <span
+                style="color: black; font-weight: lighter; font-size: xx-large; margin-top: 20px;">Requirements:</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Oracle Integration Cloud (OIC): In-depth
+                knowledge and extensive hands-on experience with Oracle Integration Cloud, including both on-premises
+                and cloud-based integrations. Proficiency in utilizing OIC's visual development tools, adapters, and
+                connectors for seamless connectivity.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Integration Design and Development:
+                Demonstrated expertise in designing and developing complex integrations between various applications,
+                systems, and databases. Proven ability to architect and implement robust, scalable, and maintainable
+                integration solutions.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Adapters: Mastery of utilizing OIC
+                adapters for connecting with different applications, databases, and services. Experience with a variety
+                of adapters, including SaaS adapters, REST, SOAP, and other protocols.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Business Process Automation: Strong
+                background in business process automation using tools such as Business Process Execution Language (BPEL)
+                and Visual Builder. Ability to streamline and optimize business workflows through automation.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Problem-Solving Skills: Proven ability
+                to troubleshoot and resolve complex integration issues promptly and effectively. Strategic
+                problem-solving skills to identify and address integration challenges in a systematic manner.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Project Management: Experience leading
+                integration projects from conception to completion, ensuring on-time delivery and adherence to quality
+                standards. Ability to work collaboratively with cross-functional teams and stakeholders.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Performance Monitoring and Optimization:
+                Expertise in monitoring integration performance, identifying bottlenecks, and implementing optimizations
+                for improved reliability and efficiency.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Security and Compliance: Knowledge of
+                best practices in ensuring the security of data during integration processes. Understanding of
+                regulatory compliance requirements related to data integration.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Documentation and Communication: Strong
+                documentation skills, including the ability to create comprehensive technical documentation for
+                integrations. Excellent communication skills to effectively convey technical concepts to both technical
+                and non-technical stakeholders.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Continuous Learning: A commitment to
+                staying updated on the latest Oracle Integration Cloud features, industry best practices, and emerging
+                technologies.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Certifications: Relevant certifications
+                in Oracle Integration Cloud and related technologies.</span>
+            <span style="color: black; font-weight: lighter; font-size: large;">Leadership and Mentorship: Demonstrated
+                leadership skills, especially if the role involves leading a team of integration professionals.
+                Willingness and ability to mentor junior team members.</span>
+        </div>
+
+    </div>
+
+    <div class="width-spacer d-flex fa-v" style="max-width: 45rem; margin-top: 20px;">
+        <span
+        style="color: black; font-weight: lighter; font-size: xx-large; margin-top: 20px;">Analyzed Skill Gapp</span>
+        <div *ngFor="let skill of skillGapData" style="margin-top: 10px;">
+            <mat-card>
+                <mat-card-content style="width: 100%; background-color: white;">
+                    <div class="d-flex fa-v">
+                        <mat-accordion>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span style="color: black; font-weight: lighter; font-size: large;">{{skill.skill}}</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <span style="color: black; font-weight: lighter; font-size: large;">{{skill.explaination}}</span>
+                            </mat-expansion-panel>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Courses
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+
+                                <div *ngFor="let course of skill.courses" style="margin-top: 10px;">
+                                    <mat-accordion *ngIf="course.course_title">
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    <span style="color: black; font-weight: lighter; font-size: large;">{{course.course_title}}</span>
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <span style="color: black; font-weight: lighter; font-size: large;">{{skill.explaination}}</span>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    Topics
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            
+                                            <div *ngFor="let topic of course.topics" style="margin-top: 10px;">
+                                                <mat-accordion>
+                                                    <mat-expansion-panel>
+                                                        <mat-expansion-panel-header>
+                                                            <mat-panel-title>
+                                                                <span style="color: black; font-weight: lighter; font-size: large;">{{topic.topic_title}}</span>
+                                                            </mat-panel-title>
+                                                        </mat-expansion-panel-header>
+                                                        <div class="d-flex fa-v">
+                                                            <span style="color: black; font-weight: lighter; font-size: large;">Topic ID: {{topic.unit_id}}</span>
+                                                            <span style="color: black; font-weight: lighter; font-size: large;">Chapter Title:{{topic.chapter_title}}</span>
+                                                            <span style="color: black; font-weight: lighter; font-size: large;">Duration: {{topic.duration}}</span>
+                                                        </div>
+                                                    </mat-expansion-panel>
+                                                </mat-accordion>
+                                            </div>
+
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+
+    </div>
+</div>

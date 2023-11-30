@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { StoreModule } from '@ngrx/store';
 import { courseReducer } from './course-setup/state/course.reducer';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { SkillGapComponent } from './skill-gap/skill-gap.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { courseReducer } from './course-setup/state/course.reducer';
     CourseMainComponent,
     CreateCourseDialogComponent,
     CreateUnitDialogComponent,
-    UnitContentComponent
+    UnitContentComponent,
+    ProjectListComponent,
+    SkillGapComponent
   ],
   imports: [
     BrowserModule,
