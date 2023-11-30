@@ -27,8 +27,8 @@ export class ApiService {
 }
 
 // export const LOCAL_API_URL = "http://localhost:3333/"
-export const BASE_URL = "http://localhost:5000/"
-// export const BASE_URL = "https://be.skillmentor.oraclecloudapps.one/"
+// export const BASE_URL = "http://localhost:5000/"
+export const BASE_URL = "https://be.skillmentor.oraclecloudapps.one/"
 export const SUPABASE_URL = "https://gqejnrnjffkkarpjrmex.supabase.co"
 export const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxZWpucm5qZmZra2FycGpybWV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEyNDE5MDAsImV4cCI6MjAxNjgxNzkwMH0.zGNWHG7nEyLeq_wk9UhmUXgSHWUYvCFdq0IJdH151Rs"
 
