@@ -1,1 +1,0 @@
-# skillmentor_angular

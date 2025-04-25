@@ -1,0 +1,8 @@
+![[Demand CRUD.png]]
+
+The update function can also be used for viewing the demand detail.
+#### Skill requirements and Behavioral Requirement
+It is a scrollable list.
+**CREATE:** When add button is clicked, a small modal should appear with a textbox to create new value.
+**UPDATE:** To update a row, click first an item then click the update button and a small modal should appear with a textbox to update the value.
+**DELETE:** To delete an item, click first an item then click the delete button and a yes | no dialog should appear.

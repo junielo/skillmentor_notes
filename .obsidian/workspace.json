@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "fd393418b24a8bd9",
+    "type": "split",
+    "children": [
+      {
+        "id": "581a897f5f5f727d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "796d10670193c73d",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tasks/Demands.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Demands"
+            }
+          },
+          {
+            "id": "71637672fd0bcbdd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Version 1/Demand Table Creation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Demand Table Creation"
+            }
+          },
+          {
+            "id": "85ff0ebac00c1604",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Assets/Demand Posting.png"
+              },
+              "icon": "lucide-image",
+              "title": "Demand Posting"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f97333b5a1482da1",
+    "type": "split",
+    "children": [
+      {
+        "id": "8ca6a61ffceb38fd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d1c64548b49fe38f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ed704b5fbfba89a7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0cadbb1274e83aab",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 299.5
+  },
+  "right": {
+    "id": "6e51eed954a4a4bb",
+    "type": "split",
+    "children": [
+      {
+        "id": "d3e4f9f9d9619f92",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "451ff9f17067b0c2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tasks/Demands.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Demands"
+            }
+          },
+          {
+            "id": "b1ed31c44ec1e686",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tasks/Demands.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Demands"
+            }
+          },
+          {
+            "id": "f61a387289e1de57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "32e62943aea9a178",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tasks/Demands.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Demands"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d1c64548b49fe38f",
+  "lastOpenFiles": [
+    "Assets/Demand Posting.png",
+    "Tasks/Demands.md",
+    "Version 1/Demand View List.md",
+    "Version 1/Demand Table Creation.md",
+    "Version 1/Demand CRUD.md",
+    "Version 1/Demand Navigation.md",
+    "Version 1/Demand Posting.md",
+    "Version 1/Demand Shortlist Table Creation.md",
+    "Version 1/Demand Candidate Rating.md",
+    "Version 1/Demand Candidate AI Remark.md",
+    "Version 1/Demand Candidate Shortlist.md",
+    "Version 1/Demand Candidate Assignments.md",
+    "Version 1/Demand Candidate Rating Table Creation.md",
+    "Assets/AI Rating Description.png",
+    "Assets/Candidate Rating.png",
+    "Assets/Demand Candidate Listing 2.png",
+    "Demand Candidate Listing.png",
+    "Assets/Demand Candidate Listing.png",
+    "Assets/Pasted image 20250424134136.png",
+    "Assets/Demand CRUD.png",
+    "Pasted image 20250424120314.png",
+    "[Demand.png.md",
+    "Assets/Pasted image 20250424103434.png",
+    "Tasks",
+    "External",
+    "Assets",
+    "Version 1"
+  ]
+}
