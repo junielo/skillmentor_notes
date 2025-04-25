@@ -1,0 +1,3 @@
+ The plan is to transfer all embedding data from ChromaDB into oracle database 23ai so that we can utilize the new feature of oracle vector database capability. Not only vector or semantic search but also the prompt to SQL where you just ask through a prompt to retrieve something by asking which column and what condition you want the oracle 23ai to execute.
+
+How to migrate these bunch of data. The idea is we use the existing course management and on the topic page we add a button and a status. A status to check if this topic is already on the 23ai or not and the button to migrate to new oracle database.
