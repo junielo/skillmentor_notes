@@ -27,14 +27,15 @@
             "id": "17d96670e3f07e5c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
+                "aFile": "Version 1/Transcript Data Migration.md",
+                "bFile": "Version 1/Transcript Data Migration.md",
+                "aRef": "HEAD",
+                "bRef": ""
               },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "icon": "diff",
+              "title": "Diff: Transcript Data Migration"
             }
           }
         ],
