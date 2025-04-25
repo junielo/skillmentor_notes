@@ -10,6 +10,6 @@
 | 1.2.9        | [[Demand Candidate Rating]]      |                |          |            |                   |                 |
 | 1.2.10       | [[Demand Candidate AI Remark]]   |                |          |            |                   |                 |
 | 1.2.11       | [[Demand Posting]]               |                |          |            |                   |                 |
-|              | Apex to Backend Connection       | Junielo, Jevie |          |            |                   |                 |
-| 1.2.12       | [[Transcript Data Migration]]    |                |          |            |                   |                 |
-|              | Oracle Database 23ai Research    |                |          |            |                   |                 |
+| 1.2.12       | Apex to Backend Connection       | Junielo, Jevie |          |            |                   |                 |
+| 1.2.13       | [[Transcript Data Migration]]    |                |          |            |                   |                 |
+| 1.2.14       | Oracle Database 23ai Research    |                |          |            |                   |                 |
