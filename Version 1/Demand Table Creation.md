@@ -4,7 +4,10 @@ Table Columns:
 ![[Pasted image 20250424101500.png]]
 
 Add new table for the skills_requirement with the columns
-id, skill_name, posting_count and urgent.
+id: primary
+skill_name: varchar
+posting_count: number
+urgent: boolean
 
 For Testing we can add data to table for viewing.
 
