@@ -1,9 +1,0 @@
-![[Pasted image 20250424134136.png]]
-
-
-
-![[Demand Candidate Listing 2.png]]
-
-This candidates are the list that is already on the project.
-
-To test, input dummy data to this table to show the list.
