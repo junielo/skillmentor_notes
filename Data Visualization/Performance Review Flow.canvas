@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"0a32017749219fd4","type":"file","file":"Tables/Demands Master (DEMANDS).md","x":-1280,"y":400,"width":820,"height":220},
+		{"id":"e64bbbe086179d71","type":"text","text":"Fetch all required skills for the demand","x":-380,"y":472,"width":240,"height":75},
+		{"id":"25ceb366ce86e9b1","type":"file","file":"Tables/Demand Skills (SM_DEMAND_SKILL).md","x":-80,"y":350,"width":460,"height":350},
+		{"id":"a4ad47301936173f","type":"text","text":"Loop each skill and query DEMAND SKILLS table to retrieve all the demands with this skill.","x":480,"y":600,"width":240,"height":140},
+		{"id":"17b625e0559d0a01","type":"text","text":"Query the candidates that has skills from the demand required skills","x":480,"y":320,"width":240,"height":120},
+		{"id":"352962a2bef90474","type":"file","file":"Tables/Candidate Assessment Results.md","x":810,"y":190,"width":560,"height":250},
+		{"id":"a83da53b4f45640e","type":"text","text":"Restructure query result into this JSON object:\n\n``` JSON\n[\n\t{\n\t\t\"candidate_id\": 1,\n\t\t\"demand_req_skills\": [\n\t\t\t{\n\t\t\t\t\"skill_id\": 23,\n\t\t\t\t\"assessment_score\": 78\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 24,\n\t\t\t\t\"assessment_score\": 98\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 25,\n\t\t\t\t\"assessment_score\": 0\n\t\t\t},\n\t\t]\n\t},\n\t{\n\t\t\"candidate_id\": 2,\n\t\t\"demand_req_skills\": [\n\t\t\t{\n\t\t\t\t\"skill_id\": 23,\n\t\t\t\t\"assessment_score\": 42\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 24,\n\t\t\t\t\"assessment_score\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 25,\n\t\t\t\t\"assessment_score\": 90\n\t\t\t},\n\t\t]\n\t}\n]\n```\n","x":1470,"y":-85,"width":460,"height":525},
+		{"id":"e43b174a0993da4e","type":"file","file":"Tables/Demand Skills (SM_DEMAND_SKILL).md","x":810,"y":600,"width":460,"height":320},
+		{"id":"43d28ada217df1a1","type":"text","text":"Query this demands to CANDIDATE SKILL REVIEWS table and select the most recent review date then the percent value will be the review score (in percent) of that skill.","x":1370,"y":600,"width":370,"height":140},
+		{"id":"58ad2f1f4a5224de","type":"file","file":"Tables/Candidate Skill Reviews.md","x":1840,"y":600,"width":630,"height":220},
+		{"id":"48915bbc6b7a0eef","type":"text","text":"Restructure query result into this JSON object:\n\n``` JSON\n[\n\t{\n\t\t\"candidate_id\": 1,\n\t\t\"demand_req_skills\": [\n\t\t\t{\n\t\t\t\t\"skill_id\": 23,\n\t\t\t\t\"review_score\": 78\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 24,\n\t\t\t\t\"review_score\": 98\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 25,\n\t\t\t\t\"review_score\": 0\n\t\t\t},\n\t\t]\n\t},\n\t{\n\t\t\"candidate_id\": 2,\n\t\t\"demand_req_skills\": [\n\t\t\t{\n\t\t\t\t\"skill_id\": 23,\n\t\t\t\t\"review_score\": 42\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 24,\n\t\t\t\t\"review_score\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"skill_id\": 25,\n\t\t\t\t\"review_score\": 90\n\t\t\t},\n\t\t]\n\t}\n]\n```\n","x":2580,"y":600,"width":460,"height":525},
+		{"id":"0e1b9e5bb2162d09","type":"file","file":"Excalidraw/Proficiency Similarity Score.md","x":2155,"y":-10,"width":400,"height":400},
+		{"id":"10548c1cfcc04b0b","type":"file","file":"Version 1/5. Demand Candidate Shortlist (Dummy).md","x":2760,"y":-22,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"567cf2ec789a04a7","fromNode":"e64bbbe086179d71","fromSide":"right","toNode":"25ceb366ce86e9b1","toSide":"left"},
+		{"id":"adf213e26f2e838e","fromNode":"0a32017749219fd4","fromSide":"right","toNode":"e64bbbe086179d71","toSide":"left"},
+		{"id":"454c9b77a825115e","fromNode":"25ceb366ce86e9b1","fromSide":"right","toNode":"17b625e0559d0a01","toSide":"left"},
+		{"id":"ae4bde7715e25fe2","fromNode":"17b625e0559d0a01","fromSide":"right","toNode":"352962a2bef90474","toSide":"left"},
+		{"id":"cc4c0bd93cccd578","fromNode":"25ceb366ce86e9b1","fromSide":"right","toNode":"a4ad47301936173f","toSide":"left"},
+		{"id":"749911c6f061c1ca","fromNode":"352962a2bef90474","fromSide":"right","toNode":"a83da53b4f45640e","toSide":"left"},
+		{"id":"5a35b024e3ea9512","fromNode":"a4ad47301936173f","fromSide":"right","toNode":"e43b174a0993da4e","toSide":"left"},
+		{"id":"30e3d34045cfa95a","fromNode":"e43b174a0993da4e","fromSide":"right","toNode":"43d28ada217df1a1","toSide":"left"},
+		{"id":"de8bd7582c69ce6f","fromNode":"43d28ada217df1a1","fromSide":"right","toNode":"58ad2f1f4a5224de","toSide":"left"},
+		{"id":"11f16c36ec55e0e8","fromNode":"58ad2f1f4a5224de","fromSide":"right","toNode":"48915bbc6b7a0eef","toSide":"left"},
+		{"id":"ee112e91fb15b9e1","fromNode":"a83da53b4f45640e","fromSide":"right","toNode":"0e1b9e5bb2162d09","toSide":"left"},
+		{"id":"8425b763b82ae127","fromNode":"48915bbc6b7a0eef","fromSide":"top","toNode":"0e1b9e5bb2162d09","toSide":"bottom"},
+		{"id":"a336918597b3ce02","fromNode":"0e1b9e5bb2162d09","fromSide":"right","toNode":"10548c1cfcc04b0b","toSide":"left"}
+	]
+}
