@@ -36,6 +36,13 @@
             "Python",
             "APEX/Python"
           ]
+        },
+        "Priority": {
+          "options": [
+            "High",
+            "Medium",
+            "Low"
+          ]
         }
       },
       "defaultName": "",
@@ -97,7 +104,26 @@
           },
           "filter": {
             "conjunction": "and",
-            "conditions": []
+            "conditions": [
+              {
+                "field": "Assigned",
+                "operator": "is",
+                "enabled": false,
+                "value": "Timothy"
+              },
+              {
+                "field": "Workflow",
+                "operator": "is-not",
+                "enabled": false,
+                "value": "Done"
+              },
+              {
+                "field": "Workflow",
+                "operator": "is-not",
+                "enabled": false,
+                "value": "Cancelled"
+              }
+            ]
           },
           "colors": {
             "conditions": []

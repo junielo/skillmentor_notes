@@ -23,7 +23,7 @@
 | Jevie       | 2    |        |     | 2     |
 | Junielo     |      |        |     |       |
 | Juan Franco | 1    | 3      | 1   | 5     |
-| Glen        | 4    |        | 1   | 5     |
+| Glen        | 2    | 2      | 1   | 5     |
 | Greggory    | 2    |        |     | 2     |
 | Greggy      |      |        |     |       |
 | Rehv        | 2    |        |     | 2     |
